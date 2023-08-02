@@ -5,19 +5,23 @@
   @last modified on  : 08-02-2023
   @last modified by  : Bhavesh Joshi
 -->
-<template><div class="slds-m-around_small">
-    <div style="height: 300px;">
-        <!-- <lightning-input-field field-name="{field.fieldApiName}"> -->
-        </lightning-input-field>
-        <c-signature-pad enable-name-signing="true" name-input-label="Type name here:" enable-signature-drawing="true" pad-label="Or draw signature here:" stroke-thickness="2" pen-color="black" pad-color="white" font="30px 'Great Vibes'">
-        </c-signature-pad>
-    </div><p>
-    </p><div class="slds-m-top_small">
-        <lightning-button variant="brand" label="Save" title="Save"  ></lightning-button>
-        <lightning-button variant="brand" label="Clear" title="Clear"  class="slds-m-left_x-small"></lightning-button>
-    </div><p></p>
-    <div>
-        <img src={imgSrc} />
+<template>
+    <div class="slds-p-around_small slds-card">
+        <div style="height: 300px;">
+            <lightning-input-field field-name="Digital Signature Capture">
+            </lightning-input-field>
+            <c-signature-pad enable-name-signing="true" name-input-label="Type name here:"
+                enable-signature-drawing="true" pad-label="Or draw signature here:" stroke-thickness="2"
+                pen-color="black" pad-color="white" font="30px 'Great Vibes'">
+            </c-signature-pad>
+        </div>
+        <div class="slds-m-top_small slds-p-around_xx-small">
+            <lightning-button variant="brand" label="Save" title="Save" onclick={saveSignature}></lightning-button>
+            <lightning-button variant="brand" label="Clear" title="Clear" class="slds-m-left_x-small"
+                onclick={clearSignature}></lightning-button>
+        </div>
+        <div class="slds-p-around_small">
+            <img src={imgSrc} />
+        </div>
     </div>
-</div>
 </template>
